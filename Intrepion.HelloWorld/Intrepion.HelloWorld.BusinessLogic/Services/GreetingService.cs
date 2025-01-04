@@ -4,6 +4,6 @@ public static class GreetingService
 {
     public static string Greet(string? name)
     {
-        return "Hello, Alice!";
+        return $"Hello, {name}!";
     }
 }
