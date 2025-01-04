@@ -17,4 +17,17 @@ public class GreetingService_GreetShould
         // Assert
         Assert.That(actual, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void Greet_InputNameJames_ReturnHelloJames()
+    {
+        // Arrange
+        var expected = "Hello, James!";
+
+        // Act
+        var actual = GreetingService.Greet("James");
+
+        // Assert
+        Assert.That(actual, Is.EqualTo(expected));
+    }
 }
