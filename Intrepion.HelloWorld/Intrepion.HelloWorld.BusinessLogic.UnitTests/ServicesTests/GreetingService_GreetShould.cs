@@ -10,7 +10,7 @@ public class GreetingService_GreetingShould
     [Arguments(" \n Alice \n ")]
     [Arguments(" \r   Alice \r  ")]
     [Arguments("\t\t\tAlice\t\t\t")]
-    public async Task Greet_NameAlice_ReturnHelloAlice(string alice)
+    public async Task BeHelloAlice_GivenAlice(string alice)
     {
         // Arrange
         var expected = "Hello, Alice!";
@@ -27,7 +27,8 @@ public class GreetingService_GreetingShould
     [Arguments("     Bob       ")]
     [Arguments(" \n Bob \n ")]
     [Arguments(" \r   Bob \r  ")]
-    [Arguments("\t\t\tBob\t\t\t")]    public async Task Greet_NameBob_ReturnHelloBob(string bob)
+    [Arguments("\t\t\tBob\t\t\t")]
+    public async Task BeHelloBob_GivenBob(string bob)
     {
         // Arrange
         var expected = "Hello, Bob!";
@@ -46,13 +47,13 @@ public class GreetingService_GreetingShould
     [Arguments("\n")]
     [Arguments("\r")]
     [Arguments("\t")]
-    public async Task Greet_NameNone_ReturnHelloWorld(string? name)
+    public async Task BeHelloWorld_GivenNothing(string? nothing)
     {
         // Arrange
         var expected = "Hello, world!";
 
         // Act
-        var actual = GreetingService.Greet(name);
+        var actual = GreetingService.Greet(nothing);
 
         // Assert
         await Assert.That(actual).IsEqualTo(expected);
@@ -66,10 +67,10 @@ public class GreetingService_GreetingShould
     [Arguments("Smith-Jones", "Hello, Smith-Jones!")]
     [Arguments("  First   Last  ", "Hello, First   Last!")]
     [Arguments("😀", "Hello, 😀!")]
-    public async Task Greet_NameSpecial_ReturnSpecial(string name, string expected)
+    public async Task BeHelloSpecial_GivenSpecial(string special, string expected)
     {
         // Act
-        var actual = GreetingService.Greet(name);
+        var actual = GreetingService.Greet(special);
 
         // Assert
         await Assert.That(actual).IsEqualTo(expected);
