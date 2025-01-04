@@ -10,7 +10,7 @@ public class GreetingService_GreetShould
     [InlineData(" \n Alice \n ")]
     [InlineData(" \r   Alice \r  ")]
     [InlineData("\t\t\tAlice\t\t\t")]
-    public void Greet_InputNameAlice_ReturnHelloAlice(string alice)
+    public void BeHelloAlice_GivenAlice(string alice)
     {
         // Arrange
         var expected = "Hello, Alice!";
@@ -28,7 +28,7 @@ public class GreetingService_GreetShould
     [InlineData(" \n Bob \n ")]
     [InlineData(" \r   Bob \r  ")]
     [InlineData("\t\t\tBob\t\t\t")]
-    public void Greet_InputNameBob_ReturnHelloBob(string bob)
+    public void BeHelloBob_GivenBob(string bob)
     {
         // Arrange
         var expected = "Hello, Bob!";
@@ -47,13 +47,13 @@ public class GreetingService_GreetShould
     [InlineData("\n")]
     [InlineData("\r")]
     [InlineData("\t")]
-    public void Greet_InputNameNone_ReturnHelloWorld(string? input)
+    public void BeHelloWorld_GivenNothing(string? nothing)
     {
         // Arrange
         var expected = "Hello, world!";
 
         // Act
-        var actual = GreetingService.Greet(input);
+        var actual = GreetingService.Greet(nothing);
 
         // Assert
         Assert.Equal(expected, actual);
@@ -67,10 +67,10 @@ public class GreetingService_GreetShould
     [InlineData("Smith-Jones", "Hello, Smith-Jones!")]
     [InlineData("  First   Last  ", "Hello, First   Last!")]
     [InlineData("😀", "Hello, 😀!")]
-    public void Greet_InputSpecialNames_ReturnCorrectGreeting(string? input, string expected)
+    public void BeHelloSpecial_GivenSpecial(string special, string expected)
     {
         // Act
-        var actual = GreetingService.Greet(input);
+        var actual = GreetingService.Greet(special);
 
         // Assert
         Assert.Equal(expected, actual);
