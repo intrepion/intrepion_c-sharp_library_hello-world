@@ -16,4 +16,17 @@ public class GreetingService_GreetingShould
         // Assert
         await Assert.That(actual).IsEqualTo(expected);
     }
+
+    [Test]
+    public async Task Greet_NameBob_ReturnHelloBob()
+    {
+        // Arrange
+        var expected = "Hello, Bob!";
+
+        // Act
+        var actual = GreetingService.Greet("Bob");
+
+        // Assert
+        await Assert.That(actual).IsEqualTo(expected);
+    }
 }
