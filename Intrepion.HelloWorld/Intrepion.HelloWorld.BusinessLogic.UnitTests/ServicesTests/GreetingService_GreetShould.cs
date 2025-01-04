@@ -29,4 +29,23 @@ public class GreetingService_GreetingShould
         // Assert
         await Assert.That(actual).IsEqualTo(expected);
     }
+
+    [Test]
+    [Arguments(null)]
+    [Arguments("")]
+    [Arguments(" ")]
+    [Arguments("\n")]
+    [Arguments("\r")]
+    [Arguments("\t")]
+    public async Task Greet_NameNone_ReturnHelloWorld(string? name)
+    {
+        // Arrange
+        var expected = "Hello, world!";
+
+        // Act
+        var actual = GreetingService.Greet(name);
+
+        // Assert
+        await Assert.That(actual).IsEqualTo(expected);
+    }
 }
