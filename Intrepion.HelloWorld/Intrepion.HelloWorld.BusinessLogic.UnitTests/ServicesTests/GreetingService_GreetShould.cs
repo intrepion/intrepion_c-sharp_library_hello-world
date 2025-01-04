@@ -5,35 +5,35 @@ namespace Intrepion.HelloWorld.BusinessLogic.UnitTests.ServicesTests;
 [TestFixture]
 public class GreetingService_GreetShould
 {
-    [TestCase("Oliver")]
-    [TestCase("     Oliver       ")]
-    [TestCase(" \n Oliver \n ")]
-    [TestCase(" \r   Oliver \r  ")]
-    [TestCase("\t\t\tOliver\t\t\t")]
-    public void Greet_InputNameOliver_ReturnHelloOliver(string oliver)
+    [TestCase("Alice")]
+    [TestCase("     Alice       ")]
+    [TestCase(" \n Alice \n ")]
+    [TestCase(" \r   Alice \r  ")]
+    [TestCase("\t\t\tAlice\t\t\t")]
+    public void Greet_InputNameAlice_ReturnHelloAlice(string alice)
     {
         // Arrange
-        var expected = "Hello, Oliver!";
+        var expected = "Hello, Alice!";
 
         // Act
-        var actual = GreetingService.Greet(oliver);
+        var actual = GreetingService.Greet(alice);
 
         // Assert
         Assert.That(actual, Is.EqualTo(expected));
     }
 
-    [TestCase("James")]
-    [TestCase("     James       ")]
-    [TestCase(" \n James \n ")]
-    [TestCase(" \r   James \r  ")]
-    [TestCase("\t\t\tJames\t\t\t")]
-    public void Greet_InputNameJames_ReturnHelloJames(string james)
+    [TestCase("Bob")]
+    [TestCase("     Bob       ")]
+    [TestCase(" \n Bob \n ")]
+    [TestCase(" \r   Bob \r  ")]
+    [TestCase("\t\t\tBob\t\t\t")]
+    public void Greet_InputNameBob_ReturnHelloBob(string bob)
     {
         // Arrange
-        var expected = "Hello, James!";
+        var expected = "Hello, Bob!";
 
         // Act
-        var actual = GreetingService.Greet(james);
+        var actual = GreetingService.Greet(bob);
 
         // Assert
         Assert.That(actual, Is.EqualTo(expected));
