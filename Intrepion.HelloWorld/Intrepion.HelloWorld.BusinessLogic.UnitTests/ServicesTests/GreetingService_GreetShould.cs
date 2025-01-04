@@ -56,4 +56,20 @@ public class GreetingService_GreetShould
         // Assert
         Assert.That(actual, Is.EqualTo(expected));
     }
+
+    [TestCase("mary jane", "Hello, mary jane!")]
+    [TestCase("O'Connor", "Hello, O'Connor!")]
+    [TestCase("María", "Hello, María!")]
+    [TestCase("    多田野数人    ", "Hello, 多田野数人!")]
+    [TestCase("Smith-Jones", "Hello, Smith-Jones!")]
+    [TestCase("  First   Last  ", "Hello, First   Last!")]
+    [TestCase("😀", "Hello, 😀!")]
+    public void Greet_InputSpecialNames_ReturnCorrectGreeting(string input, string expected)
+    {
+        // Act
+        var actual = GreetingService.Greet(input);
+
+        // Assert
+        Assert.That(actual, Is.EqualTo(expected));
+    }
 }
