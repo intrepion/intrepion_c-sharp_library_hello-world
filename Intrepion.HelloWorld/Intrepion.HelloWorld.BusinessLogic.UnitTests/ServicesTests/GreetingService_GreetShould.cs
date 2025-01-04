@@ -39,12 +39,13 @@ public class GreetingService_GreetShould
         Assert.That(actual, Is.EqualTo(expected));
     }
 
+    [TestCase(null)]
     [TestCase("")]
     [TestCase(" ")]
     [TestCase("\n")]
     [TestCase("\r")]
     [TestCase("\t")]
-    public void Greet_InputNameNone_ReturnHelloWorld(string name)
+    public void Greet_InputNameNone_ReturnHelloWorld(string? name)
     {
         // Arrange
         var expected = "Hello, world!";
