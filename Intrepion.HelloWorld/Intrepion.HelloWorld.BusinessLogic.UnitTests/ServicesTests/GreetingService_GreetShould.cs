@@ -30,4 +30,23 @@ public class GreetingService_GreetShould
         // Assert
         Assert.AreEqual(expected, actual);
     }
+
+    [TestMethod]
+    [DataRow(null)]
+    [DataRow("")]
+    [DataRow(" ")]
+    [DataRow("\n")]
+    [DataRow("\r")]
+    [DataRow("\t")]
+    public void Greet_NameNone_ReturnHelloWorld(string? name)
+    {
+        // Arrange
+        var expected = "Hello, world!";
+
+        // Act
+        var actual = GreetingService.Greet(name);
+
+        // Assert
+        Assert.AreEqual(expected, actual);
+    }
 }
