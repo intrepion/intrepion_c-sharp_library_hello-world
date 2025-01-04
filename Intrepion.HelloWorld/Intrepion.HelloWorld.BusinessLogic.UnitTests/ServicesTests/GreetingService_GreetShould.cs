@@ -58,4 +58,21 @@ public class GreetingService_GreetShould
         // Assert
         Assert.Equal(expected, actual);
     }
+
+    [Theory]
+    [InlineData("mary jane", "Hello, mary jane!")]
+    [InlineData("O'Connor", "Hello, O'Connor!")]
+    [InlineData("María", "Hello, María!")]
+    [InlineData("    多田野数人    ", "Hello, 多田野数人!")]
+    [InlineData("Smith-Jones", "Hello, Smith-Jones!")]
+    [InlineData("  First   Last  ", "Hello, First   Last!")]
+    [InlineData("😀", "Hello, 😀!")]
+    public void Greet_InputSpecialNames_ReturnCorrectGreeting(string? input, string expected)
+    {
+        // Act
+        var actual = GreetingService.Greet(input);
+
+        // Assert
+        Assert.Equal(expected, actual);
+    }
 }
