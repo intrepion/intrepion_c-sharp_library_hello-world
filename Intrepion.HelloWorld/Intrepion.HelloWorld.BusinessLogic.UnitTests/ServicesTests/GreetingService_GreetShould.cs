@@ -29,4 +29,23 @@ public class GreetingService_GreetShould
         // Assert
         Assert.Equal(expected, actual);
     }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData(" ")]
+    [InlineData("\n")]
+    [InlineData("\r")]
+    [InlineData("\t")]
+    public void Greet_InputNameNone_ReturnHelloWorld(string? input)
+    {
+        // Arrange
+        var expected = "Hello, world!";
+
+        // Act
+        var actual = GreetingService.Greet(input);
+
+        // Assert
+        Assert.Equal(expected, actual);
+    }
 }
