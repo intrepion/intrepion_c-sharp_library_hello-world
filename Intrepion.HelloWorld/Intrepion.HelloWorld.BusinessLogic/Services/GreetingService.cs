@@ -9,6 +9,8 @@ static public class GreetingService
             return "Hello, world!";
         }
 
+        name = name.Trim();
+
         return $"Hello, {name}!";
     }
 }
