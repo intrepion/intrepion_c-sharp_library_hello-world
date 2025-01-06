@@ -1,9 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <Authors>Oliver Forral</Authors>
+    <Company>intrepion</Company>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>Intrepion.HelloWorld</PackageId>
+    <TargetFramework>net8.0</TargetFramework>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
 </Project>
